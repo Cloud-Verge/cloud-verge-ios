@@ -8,17 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */; };
-		0FBAD51B2BE27C8000BB9A90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD51A2BE27C8000BB9A90 /* ContentView.swift */; };
 		0FBAD51D2BE27C8200BB9A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */; };
 		0FBAD5202BE27C8200BB9A90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51F2BE27C8200BB9A90 /* Preview Assets.xcassets */; };
+		0FBAD5282BE2819200BB9A90 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5272BE2819200BB9A90 /* LoginView.swift */; };
+		0FBAD52B2BE281C400BB9A90 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD52A2BE281C400BB9A90 /* Background.swift */; };
+		0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD52C2BE284D200BB9A90 /* ActionButton.swift */; };
+		0FBAD5302BE285DF00BB9A90 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD52F2BE285DF00BB9A90 /* MainView.swift */; };
+		0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5322BE287F700BB9A90 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FBAD5152BE27C8000BB9A90 /* CloudVerge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudVerge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudVergeApp.swift; sourceTree = "<group>"; };
-		0FBAD51A2BE27C8000BB9A90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FBAD51F2BE27C8200BB9A90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0FBAD5272BE2819200BB9A90 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0FBAD52A2BE281C400BB9A90 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		0FBAD52C2BE284D200BB9A90 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		0FBAD52F2BE285DF00BB9A90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0FBAD5322BE287F700BB9A90 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0FBAD5342BE28FD800BB9A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +60,11 @@
 		0FBAD5172BE27C8000BB9A90 /* CloudVerge */ = {
 			isa = PBXGroup;
 			children = (
+				0FBAD5342BE28FD800BB9A90 /* Info.plist */,
+				0FBAD52E2BE2852F00BB9A90 /* Main */,
+				0FBAD5292BE281B100BB9A90 /* UIComponents */,
+				0FBAD5262BE2816900BB9A90 /* Login */,
 				0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */,
-				0FBAD51A2BE27C8000BB9A90 /* ContentView.swift */,
 				0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */,
 				0FBAD51E2BE27C8200BB9A90 /* Preview Content */,
 			);
@@ -65,6 +77,32 @@
 				0FBAD51F2BE27C8200BB9A90 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FBAD5262BE2816900BB9A90 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0FBAD5272BE2819200BB9A90 /* LoginView.swift */,
+				0FBAD5322BE287F700BB9A90 /* NetworkService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0FBAD5292BE281B100BB9A90 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0FBAD52A2BE281C400BB9A90 /* Background.swift */,
+				0FBAD52C2BE284D200BB9A90 /* ActionButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		0FBAD52E2BE2852F00BB9A90 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0FBAD52F2BE285DF00BB9A90 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FBAD51B2BE27C8000BB9A90 /* ContentView.swift in Sources */,
+				0FBAD5282BE2819200BB9A90 /* LoginView.swift in Sources */,
 				0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */,
+				0FBAD52B2BE281C400BB9A90 /* Background.swift in Sources */,
+				0FBAD5302BE285DF00BB9A90 /* MainView.swift in Sources */,
+				0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */,
+				0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +317,7 @@
 				DEVELOPMENT_TEAM = 8K79CU6LMQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CloudVerge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +347,7 @@
 				DEVELOPMENT_TEAM = 8K79CU6LMQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CloudVerge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
