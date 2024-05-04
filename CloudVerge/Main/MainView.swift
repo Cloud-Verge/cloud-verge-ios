@@ -13,10 +13,8 @@ struct MainView: View {
             TabView {
                 StorageView()
                     .tabItem {
-                        VStack {
-                            Image(systemName: "folder.fill")
-                            Text("Storage")
-                        }
+                        Image(systemName: "folder.fill")
+                        Text("Storage")
                     }
                 SettingsView()
                     .tabItem {
@@ -24,6 +22,8 @@ struct MainView: View {
                         Text("Settings")
                     }
             }
+            .navigationTitle("CloudVerge")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

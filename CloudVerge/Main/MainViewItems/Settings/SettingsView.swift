@@ -47,7 +47,7 @@ struct SettingsView: View {
                                 .textInputAutocapitalization(.never)
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                                        .stroke(Color.gray, lineWidth: 1)
                                 }
                         } else {
                             Text(password)

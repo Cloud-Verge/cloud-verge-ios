@@ -40,7 +40,7 @@ enum SettingsNetworkService {
                 completion(true)
                 print("Password updated successfuly")
             } else {
-                print("Login failed with status: \(status)")
+                print("Password update failed with status: \(status)")
             }
         }
         
