@@ -71,6 +71,11 @@ struct LoginView: View {
                             }
                             
                         }
+                                     .padding(.bottom, 15)
+                    
+                        Button(newUser ? "Or sign in" : "Or sign up") {
+                            self.newUser.toggle()
+                        }
                     }
                     .preferredColorScheme(.light)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

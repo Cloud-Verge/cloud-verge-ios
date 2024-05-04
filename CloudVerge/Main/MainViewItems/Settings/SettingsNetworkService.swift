@@ -1,23 +1,23 @@
 //
-//  NetworkService.swift
+//  SettingsNetworkService.swift
 //  CloudVerge
 //
-//  Created by Кириллов Артемий Михайлович on 01.05.2024.
+//  Created by Кириллов Артемий Михайлович on 04.05.2024.
 //
 
 import Foundation
 
-enum NetworkService {
+enum SettingsNetworkService {
     
-    static func sendAuthData(endpoint: String, email: String, password: String, completion: @escaping (Bool, String?) -> ()) {
-        let url = URL(string: "http://0.0.0.0:8000/auth/\(endpoint)")!
+    static func updatePassword(password: String, token: String, completion: @escaping (Bool) -> ()) {
+        let url = URL(string: "http://0.0.0.0:8000/auth/update_password")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
         
         let json: [String: Any] = [
-            "email": email,
-            "password": password
+            "new_password": password
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: [])
@@ -25,25 +25,20 @@ enum NetworkService {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!.localizedDescription)")
-                completion(false, nil)
+                completion(false)
                 return
             }
             
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
             guard let responseJSON = responseJSON, let status = responseJSON["status"] as? String else {
                 print("Invalid response")
-                completion(false, nil)
+                completion(false)
                 return
             }
             
             if status == "ok" {
-                guard let token = responseJSON["token"] as? String else {
-                    completion(false, nil)
-                    print("Login failed")
-                    return
-                }
-                completion(true, token)
-                print("Login successful")
+                completion(true)
+                print("Password updated successfuly")
             } else {
                 print("Login failed with status: \(status)")
             }

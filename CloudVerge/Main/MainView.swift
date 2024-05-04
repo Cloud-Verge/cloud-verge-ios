@@ -9,7 +9,22 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            TabView {
+                StorageView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "folder.fill")
+                            Text("Storage")
+                        }
+                    }
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gearshape.fill")
+                        Text("Settings")
+                    }
+            }
+        }
     }
 }
 
