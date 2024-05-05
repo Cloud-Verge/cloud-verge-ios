@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct StorageView: View {
+    
+    @State private var selectedFile: URL?
+    @State private var isPickerShown = false
     
     var files: [FileModel] = []
     
@@ -20,10 +24,31 @@ struct StorageView: View {
             }
             VStack {
                 Spacer()
-                ActionButton(text: "Upload file", buttonStyle: .primary) {}
+                
+                if let selectedFile = selectedFile {
+                    Text("Selected file: \(selectedFile.lastPathComponent)")
+                        .padding(16)
+                    
+                    ActionButton(text: "Upload to storage", buttonStyle: .secondary) {
+                        print("load file")
+                    }
+                } else {
+                    ActionButton(text: "Upload file", buttonStyle: .primary) {
+                        isPickerShown = true
+                    }
                     .padding(.bottom, 25)
+                }
+            }
+            .fileImporter(isPresented: $isPickerShown, allowedContentTypes: [.data]) { result in
+                switch result {
+                case .success(let url):
+                    selectedFile = url
+                case .failure(let error):
+                    print("Error selecting file: \(error.localizedDescription)")
+                }
             }
         }
+        .preferredColorScheme(.light)
     }
 }
 

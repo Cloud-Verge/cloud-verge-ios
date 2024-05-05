@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum StorageNetworkService {
+    
+    static func uploadFile(fileURL: URL) {
+        
+    }
+    
+    static func downloadFile() {
+        
+    }
+}
