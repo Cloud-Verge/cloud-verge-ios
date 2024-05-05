@@ -32,6 +32,7 @@ struct StorageView: View {
                     ActionButton(text: "Upload to storage", buttonStyle: .secondary) {
                         print("load file")
                     }
+                    .padding(.bottom, 25)
                 } else {
                     ActionButton(text: "Upload file", buttonStyle: .primary) {
                         isPickerShown = true

@@ -12,6 +12,7 @@
 		0FB5EE452BE6ABC500FDDD30 /* SettingsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE442BE6ABC500FDDD30 /* SettingsNetworkService.swift */; };
 		0FB5EE482BE7BBA600FDDD30 /* StorageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */; };
 		0FB5EE4A2BE7BC5800FDDD30 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */; };
+		0FB5EE4D2BE849A100FDDD30 /* StorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */; };
 		0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */; };
 		0FBAD51D2BE27C8200BB9A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */; };
 		0FBAD5202BE27C8200BB9A90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51F2BE27C8200BB9A90 /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		0FB5EE442BE6ABC500FDDD30 /* SettingsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkService.swift; sourceTree = "<group>"; };
 		0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNetworkService.swift; sourceTree = "<group>"; };
 		0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
+		0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLoader.swift; sourceTree = "<group>"; };
 		0FBAD5152BE27C8000BB9A90 /* CloudVerge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudVerge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudVergeApp.swift; sourceTree = "<group>"; };
 		0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,11 +74,20 @@
 		0FB5EE462BE7BB9300FDDD30 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				0FB5EE4B2BE8498300FDDD30 /* Network */,
 				0FB5EE3F2BE5564000FDDD30 /* StorageView.swift */,
-				0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */,
 				0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		0FB5EE4B2BE8498300FDDD30 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */,
+				0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		0FBAD50C2BE27C8000BB9A90 = {
@@ -220,6 +231,7 @@
 				0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */,
 				0FB5EE452BE6ABC500FDDD30 /* SettingsNetworkService.swift in Sources */,
 				0FBAD52B2BE281C400BB9A90 /* Background.swift in Sources */,
+				0FB5EE4D2BE849A100FDDD30 /* StorageLoader.swift in Sources */,
 				0FBAD5302BE285DF00BB9A90 /* MainView.swift in Sources */,
 				0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */,
 				0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */,
