@@ -91,6 +91,9 @@ struct SettingsView: View {
             }
             .ignoresSafeArea(.keyboard, edges: .bottom)
         }
+        .navigationTitle("CloudVerge")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarRole(.editor)
         .onTapGesture {
             self.endEditing()
         }

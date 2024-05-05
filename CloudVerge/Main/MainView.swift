@@ -10,20 +10,17 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         NavigationView {
-            TabView {
-                StorageView()
-                    .tabItem {
-                        Image(systemName: "folder.fill")
-                        Text("Storage")
+            StorageView()
+                .navigationTitle("CloudVerge")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gearshape.fill")
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                SettingsView()
-                    .tabItem {
-                        Image(systemName: "gearshape.fill")
-                        Text("Settings")
-                    }
-            }
-            .navigationTitle("CloudVerge")
-            .navigationBarTitleDisplayMode(.inline)
+                }
         }
     }
 }
