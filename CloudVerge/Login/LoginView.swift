@@ -65,11 +65,19 @@ struct LoginView: View {
                                     UserDefaults.standard.setValue(password, forKey: "password")
                                     if let token = token {
                                         UserDefaults.standard.setValue(token, forKey: "token")
+                                        self.loginSuccess.toggle()
+                                    } else {
+                                        NetworkService.sendAuthData(endpoint: "login", email: email, password: password) { status, token in
+                                            if status {
+                                                if let newToken = token {
+                                                    UserDefaults.standard.setValue(newToken, forKey: "token")
+                                                    self.loginSuccess.toggle()
+                                                }
+                                            }
+                                        }
                                     }
-                                    self.loginSuccess.toggle()
                                 }
                             }
-                            
                         }
                                      .padding(.bottom, 15)
                     

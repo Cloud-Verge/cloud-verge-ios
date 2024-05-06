@@ -37,13 +37,18 @@ enum NetworkService {
             }
             
             if status == "ok" {
-                guard let token = responseJSON["token"] as? String else {
-                    completion(false, nil)
-                    print("Login failed")
-                    return
+                if endpoint == "register" {
+                    completion(true, nil)
+                    print("Registration successful")
+                } else {
+                    guard let token = responseJSON["token"] as? String else {
+                        completion(false, nil)
+                        print("Login failed")
+                        return
+                    }
+                    completion(true, token)
+                    print("Login successful")
                 }
-                completion(true, token)
-                print("Login successful")
             } else {
                 print("Login failed with status: \(status)")
             }

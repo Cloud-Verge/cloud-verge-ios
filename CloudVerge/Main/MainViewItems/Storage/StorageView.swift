@@ -12,14 +12,32 @@ struct StorageView: View {
     
     @State private var selectedFile: URL?
     @State private var isPickerShown = false
+    @State private var token = UserDefaults.standard.value(forKey: "token") as? String ?? "None"
     
-    var files: [FileModel] = []
+    @State private var showDownloadResult: Bool = false
+    @State private var downloadResult = false
+    
+    @State var files: [FileModel] = []
     
     var body: some View {
         ZStack {
             List {
                 ForEach(files) { file in
-                    Text(file.name)
+                    HStack {
+                        Text(file.name)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+                    .onTapGesture {
+                        StorageNetworkService.downloadFile(name: file.name, fileID: file.id, token: token) { result in
+                            showDownloadResult.toggle()
+                            self.downloadResult = result
+                        }
+                    }
+                    .alert(downloadResult ? "File loaded successfully" : "Flie load failed",
+                           isPresented: $showDownloadResult) {
+                        Button("OK", role: .cancel) { }
+                    }
                 }
             }
             VStack {
@@ -30,7 +48,14 @@ struct StorageView: View {
                         .padding(16)
                     
                     ActionButton(text: "Upload to storage", buttonStyle: .secondary) {
-                        print("load file")
+                        StorageNetworkService.getUploadLink(token: token, access: "PUBLIC") { result in
+                            switch result {
+                            case let .success(link):
+                                print(link)
+                            case let .failure(error):
+                                print("Failed to get upload link: \(error.localizedDescription)")
+                            }
+                        }
                     }
                     .padding(.bottom, 25)
                 } else {
@@ -49,10 +74,20 @@ struct StorageView: View {
                 }
             }
         }
+        .onAppear {
+            StorageNetworkService.getFilesList(token: token) { result in
+                switch result {
+                case let .success(files):
+                    self.files = files
+                case let .failure(error):
+                    self.files = []
+                }
+            }
+        }
         .preferredColorScheme(.light)
     }
 }
 
 #Preview {
-    StorageView(files: [FileModel(name: "test1.txt"), FileModel(name: "test2.json")])
+    StorageView()
 }

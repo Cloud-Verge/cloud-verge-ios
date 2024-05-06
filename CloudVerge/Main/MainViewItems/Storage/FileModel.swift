@@ -8,6 +8,6 @@
 import Foundation
 
 struct FileModel: Identifiable {
-    var id = UUID().uuidString
+    var id: Int
     var name: String
 }

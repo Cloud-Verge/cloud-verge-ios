@@ -12,7 +12,6 @@
 		0FB5EE452BE6ABC500FDDD30 /* SettingsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE442BE6ABC500FDDD30 /* SettingsNetworkService.swift */; };
 		0FB5EE482BE7BBA600FDDD30 /* StorageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */; };
 		0FB5EE4A2BE7BC5800FDDD30 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */; };
-		0FB5EE4D2BE849A100FDDD30 /* StorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */; };
 		0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */; };
 		0FBAD51D2BE27C8200BB9A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */; };
 		0FBAD5202BE27C8200BB9A90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FBAD51F2BE27C8200BB9A90 /* Preview Assets.xcassets */; };
@@ -21,6 +20,8 @@
 		0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD52C2BE284D200BB9A90 /* ActionButton.swift */; };
 		0FBAD5302BE285DF00BB9A90 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD52F2BE285DF00BB9A90 /* MainView.swift */; };
 		0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5322BE287F700BB9A90 /* NetworkService.swift */; };
+		0FBFD5362BE917FF008B9B82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBFD5352BE917FF008B9B82 /* Alamofire */; };
+		0FBFD5382BE917FF008B9B82 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBFD5372BE917FF008B9B82 /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,6 @@
 		0FB5EE442BE6ABC500FDDD30 /* SettingsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkService.swift; sourceTree = "<group>"; };
 		0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNetworkService.swift; sourceTree = "<group>"; };
 		0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
-		0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLoader.swift; sourceTree = "<group>"; };
 		0FBAD5152BE27C8000BB9A90 /* CloudVerge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudVerge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FBAD5182BE27C8000BB9A90 /* CloudVergeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudVergeApp.swift; sourceTree = "<group>"; };
 		0FBAD51C2BE27C8200BB9A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBFD5362BE917FF008B9B82 /* Alamofire in Frameworks */,
+				0FBFD5382BE917FF008B9B82 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,20 +76,11 @@
 		0FB5EE462BE7BB9300FDDD30 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				0FB5EE4B2BE8498300FDDD30 /* Network */,
+				0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */,
 				0FB5EE3F2BE5564000FDDD30 /* StorageView.swift */,
 				0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		0FB5EE4B2BE8498300FDDD30 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */,
-				0FB5EE4C2BE849A100FDDD30 /* StorageLoader.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		0FBAD50C2BE27C8000BB9A90 = {
@@ -171,6 +164,10 @@
 			dependencies = (
 			);
 			name = CloudVerge;
+			packageProductDependencies = (
+				0FBFD5352BE917FF008B9B82 /* Alamofire */,
+				0FBFD5372BE917FF008B9B82 /* AlamofireDynamic */,
+			);
 			productName = CloudVerge;
 			productReference = 0FBAD5152BE27C8000BB9A90 /* CloudVerge.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 0FBAD50C2BE27C8000BB9A90;
+			packageReferences = (
+				0FBFD5342BE917FF008B9B82 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0FBAD5162BE27C8000BB9A90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,7 +231,6 @@
 				0FBAD5192BE27C8000BB9A90 /* CloudVergeApp.swift in Sources */,
 				0FB5EE452BE6ABC500FDDD30 /* SettingsNetworkService.swift in Sources */,
 				0FBAD52B2BE281C400BB9A90 /* Background.swift in Sources */,
-				0FB5EE4D2BE849A100FDDD30 /* StorageLoader.swift in Sources */,
 				0FBAD5302BE285DF00BB9A90 /* MainView.swift in Sources */,
 				0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */,
 				0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */,
@@ -444,6 +443,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FBFD5342BE917FF008B9B82 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FBFD5352BE917FF008B9B82 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FBFD5342BE917FF008B9B82 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0FBFD5372BE917FF008B9B82 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FBFD5342BE917FF008B9B82 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FBAD50D2BE27C8000BB9A90 /* Project object */;
 }
