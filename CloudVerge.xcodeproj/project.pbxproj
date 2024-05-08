@@ -22,6 +22,7 @@
 		0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAD5322BE287F700BB9A90 /* NetworkService.swift */; };
 		0FBFD5362BE917FF008B9B82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBFD5352BE917FF008B9B82 /* Alamofire */; };
 		0FBFD5382BE917FF008B9B82 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0FBFD5372BE917FF008B9B82 /* AlamofireDynamic */; };
+		0FBFD53A2BEB5A49008B9B82 /* StorageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFD5392BEB5A49008B9B82 /* StorageInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		0FBAD52F2BE285DF00BB9A90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0FBAD5322BE287F700BB9A90 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0FBAD5342BE28FD800BB9A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0FBFD5392BEB5A49008B9B82 /* StorageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				0FB5EE472BE7BBA600FDDD30 /* StorageNetworkService.swift */,
 				0FB5EE3F2BE5564000FDDD30 /* StorageView.swift */,
 				0FB5EE492BE7BC5800FDDD30 /* FileModel.swift */,
+				0FBFD5392BEB5A49008B9B82 /* StorageInteractor.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				0FBAD5332BE287F700BB9A90 /* NetworkService.swift in Sources */,
 				0FBAD52D2BE284D200BB9A90 /* ActionButton.swift in Sources */,
 				0FB5EE402BE5564000FDDD30 /* StorageView.swift in Sources */,
+				0FBFD53A2BEB5A49008B9B82 /* StorageInteractor.swift in Sources */,
 				0FB5EE4A2BE7BC5800FDDD30 /* FileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

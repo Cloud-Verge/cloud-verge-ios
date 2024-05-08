@@ -8,6 +8,6 @@
 import Foundation
 
 struct FileModel: Identifiable {
-    var id: Int
+    var id: String
     var name: String
 }

@@ -19,6 +19,8 @@ struct StorageView: View {
     
     @State var files: [FileModel] = []
     
+    private var interactor: StorageInteractorProtocol = StorageInteractor()
+    
     var body: some View {
         ZStack {
             List {
@@ -29,10 +31,7 @@ struct StorageView: View {
                         Image(systemName: "chevron.right")
                     }
                     .onTapGesture {
-                        StorageNetworkService.downloadFile(name: file.name, fileID: file.id, token: token) { result in
-                            showDownloadResult.toggle()
-                            self.downloadResult = result
-                        }
+                        interactor.downloadFile(token: token, fileID: file.id, loadResult: &downloadResult)
                     }
                     .alert(downloadResult ? "File loaded successfully" : "Flie load failed",
                            isPresented: $showDownloadResult) {
@@ -48,14 +47,7 @@ struct StorageView: View {
                         .padding(16)
                     
                     ActionButton(text: "Upload to storage", buttonStyle: .secondary) {
-                        StorageNetworkService.getUploadLink(token: token, access: "PUBLIC") { result in
-                            switch result {
-                            case let .success(link):
-                                print(link)
-                            case let .failure(error):
-                                print("Failed to get upload link: \(error.localizedDescription)")
-                            }
-                        }
+                        interactor.uploadFile(token: token, selectedFile: selectedFile)
                     }
                     .padding(.bottom, 25)
                 } else {
@@ -75,6 +67,7 @@ struct StorageView: View {
             }
         }
         .onAppear {
+            selectedFile = nil
             StorageNetworkService.getFilesList(token: token) { result in
                 switch result {
                 case let .success(files):
