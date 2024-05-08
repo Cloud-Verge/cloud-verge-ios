@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol StorageInteractorProtocol {
     
     func uploadFile(token: String, selectedFile: URL)
     
-    func downloadFile(token: String, fileID: String, loadResult: inout Bool)
+    func downloadFile(token: String, fileID: String, loadResult: Binding<Bool>)
     
     func getFilesList()
 }
@@ -36,7 +37,7 @@ class StorageInteractor: StorageInteractorProtocol {
         }
     }
     
-    func downloadFile(token: String, fileID: String, loadResult: inout Bool) {
+    func downloadFile(token: String, fileID: String, loadResult: Binding<Bool>) {
         StorageNetworkService.getDownloadLink(token: token, fileID: fileID) { result in
             switch result {
             case let .success(link):
@@ -44,22 +45,20 @@ class StorageInteractor: StorageInteractorProtocol {
                     switch result {
                     case let .success(resp):
                         print(resp)
-                        loadResult = true
+                        loadResult.wrappedValue = true
                     case let .failure(error):
                         print("Error downloading file from server: \(error.localizedDescription)")
-                        loadResult = false
+                        loadResult.wrappedValue = false
                     }
                 }
             case let .failure(error):
                 print("Failed to get download link: \(error.localizedDescription)")
-                loadResult = false
+                loadResult.wrappedValue = false
             }
         }
     }
     
-    func getFilesList() {
-        <#code#>
-    }
+    func getFilesList() {}
     
     
 }

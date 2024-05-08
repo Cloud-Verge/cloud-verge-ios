@@ -31,7 +31,8 @@ struct StorageView: View {
                         Image(systemName: "chevron.right")
                     }
                     .onTapGesture {
-                        interactor.downloadFile(token: token, fileID: file.id, loadResult: &downloadResult)
+                        interactor.downloadFile(token: token, fileID: file.id, loadResult: $downloadResult)
+                        self.showDownloadResult.toggle()
                     }
                     .alert(downloadResult ? "File loaded successfully" : "Flie load failed",
                            isPresented: $showDownloadResult) {

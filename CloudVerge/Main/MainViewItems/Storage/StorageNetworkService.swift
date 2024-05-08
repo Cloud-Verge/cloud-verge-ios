@@ -137,7 +137,7 @@ enum StorageNetworkService {
         uploadTask.resume()
     }
     
-    static func downloadFile(remotePath: String, token: String, completion: (Result<String, Error>) -> ()) {
+    static func downloadFile(remotePath: String, token: String, completion: @escaping (Result<String, Error>) -> ()) {
         let downloadURL = URL(string: remotePath.replacingOccurrences(of: "localhost", with: "0.0.0.0"))!
         
         var request = URLRequest(url: downloadURL)
@@ -161,7 +161,7 @@ enum StorageNetworkService {
             }
             
             let fileManager = FileManager.default
-            guard let downloadsURL = try? fileManager.url(for: .downloadsDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {
+            guard let downloadsURL = fileManager.urls(for: .downloadsDirectory, in: .userDomainMask).first else {
                 completion(.failure(NSError(domain: "Error getting downloads directory", code: 403)))
                 return
             }
